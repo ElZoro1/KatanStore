@@ -1,20 +1,24 @@
 import React from 'react';
-import Header from './components/Header';
-import Carousel from './components/Carousel';
-import FeaturedProducts from './components/FeaturedProducts';
-import CustomerReviews from './components/CustomerReviews';
-import Footer from './components/Footer';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Nosotros from './components/nosotros/Nosotros';
+import Home from './components/home/Home';
+import Register from './components/inicio/Register'; // Ruta ajustada para Register.js
+import Login from './components/inicio/login'; // Ruta ajustada para Login.js
+import Header from './components/nosotros/Header'; // Ruta ajustada para Header.js
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Carousel />
-      <FeaturedProducts />
-      <CustomerReviews />
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} /> {/* Ruta de inicio */}
+          <Route path="/nosotros" element={<Nosotros />} /> {/* Ruta de Nosotros */}
+          <Route path="/register" element={<Register />} /> {/* Ruta de Registro */}
+          <Route path="/login" element={<Login />} /> {/* Ruta de Inicio de Sesión */}
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

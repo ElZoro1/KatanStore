@@ -1,0 +1,96 @@
+.register-container {
+  display: flex;
+  height: 100vh;
+}
+
+.register-form {
+  width: 50%;
+  background-color: #f8f8f8;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #000; /* Color negro para el texto */
+}
+
+.register-form h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #000; /* Color negro para el título */
+}
+
+.register-form label {
+  font-weight: bold;
+  margin-top: 10px;
+  color: #000; /* Color negro para las etiquetas */
+}
+
+.register-form input {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #000; /* Color negro para el texto de los inputs */
+}
+
+.register-form input::placeholder {
+  color: #999; /* Color gris claro para el texto de los placeholders */
+}
+
+.register-button {
+  background-color: #8c13f9;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+
+.social-login {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.social-login span {
+  font-size: 18px;
+  color: #000; /* Color negro para el texto */
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.register-image {
+  width: 50%;
+  background-color: #000;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-image img {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.register-image h2 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.register-image h2 span {
+  color: red;
+}
