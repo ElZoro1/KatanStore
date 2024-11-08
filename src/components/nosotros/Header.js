@@ -7,7 +7,6 @@ function Header() {
     <header className="header">
       <div className="logo-section">
         <img src="/1.png" alt="Katanstore Logo" className="logo" />
-        <h1>KATANSTORE</h1>
       </div>
       <nav className="nav">
         <NavLink to="/" exact activeClassName="active">Inicio</NavLink>
@@ -16,11 +15,10 @@ function Header() {
       </nav>
       <div className="header-actions">
         <div className="search-bar">
-          <input type="text" placeholder="Buscar Tu Ropa" />
+          <input type="text" placeholder="Buscar tu ropa" />
         </div>
         
-        {/* Enlace al login con el icono user.png */}
-        <Link to="/login">
+        <Link to="/login"> {/* Asegúrate de que el enlace esté dirigido a "/login" */}
           <img src="/user.png" alt="Perfil" className="icon" />
         </Link>
         

@@ -1,83 +1,85 @@
 /* Encabezado general */
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    background-color: #000;
-    color: #fff;
-  }
-  
-  /* Sección del logotipo */
-  .logo-section {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo {
-    height: 50px;
-    margin-right: 10px;
-  }
-  
-  .logo-section h1 {
-    font-size: 1.5em;
-    margin: 0;
-  }
-  
-  /* Menú de navegación */
-  .nav {
-    display: flex;
-    gap: 30px;
-  }
-  
-  .nav a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1em;
-    transition: color 0.3s ease;
-  }
-  
-  .nav a:hover {
-    color: #ff0000;
-  }
-  
-  .nav .active {
-    color: #ff0000;
-  }
-  
-  /* Barra de búsqueda y iconos */
-  .header-actions {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-  }
-  
-  .search-bar {
-    display: flex;
-    align-items: center;
-    background-color: #333;
-    border-radius: 20px;
-    padding: 5px 10px;
-  }
-  
-  .search-bar input {
-    border: none;
-    background-color: transparent;
-    color: #fff;
-    outline: none;
-    padding: 5px;
-  }
-  
-  .search-bar button {
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .icon {
-    width: 25px;
-    height: 25px;
-    cursor: pointer;
-  }
-  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+}
+
+/* Sección del logotipo */
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.logo-section h1 {
+  font-size: 1.8em;
+  margin: 2;
+}
+
+/* Menú de navegación */
+.nav {
+  display: flex;
+  justify-content: center; /* Centra los elementos del menú */
+  align-items: center;
+  flex-grow: 1; /* Permite que el menú ocupe el espacio central */
+  gap: 30px;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: #ff0000;
+}
+
+.nav .active {
+  color: #ff0000;
+}
+
+/* Barra de búsqueda y iconos */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #333;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+
+.search-bar input {
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  outline: none;
+  padding: 5px;
+}
+
+.search-bar button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
