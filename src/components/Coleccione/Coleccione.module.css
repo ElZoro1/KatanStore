@@ -1,0 +1,216 @@
+/* Fondo blanco en el contenedor principal */
+.coleccionesContainer {
+  font-family: Arial, sans-serif;
+  background-color: #fff; /* Fondo blanco */
+}
+
+/* Encabezado */
+.header {
+  background-color: #800080; /* Morado */
+  color: #fff;
+  text-align: center;
+  padding: 10px 10; /* Reducido el padding para disminuir la altura */
+  font-size: 20px; /* Ajustar el tamaño de la fuente si es necesario */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+
+/* Contenido principal */
+.mainContent {
+  display: flex;
+  padding: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Secciones de categorías y tallas */
+.categories, .sizes {
+  background-color: #800080;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.categories:hover, .sizes:hover {
+  transform: scale(1.02);
+}
+
+/* Títulos de las secciones */
+.categories h3, .sizes h3 {
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 10px;
+}
+
+/* Lista de botones */
+.categories ul, .sizes ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espacio entre botones */
+}
+
+/* Estilo de cada botón */
+.categories li, .sizes li, .button {
+  background-color: #fff;
+  color: #800080;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: none;
+  outline: none;
+}
+
+.categories li:hover, .sizes li:hover, .button:hover {
+  background-color: #e0e0e0; /* Cambia el color de fondo al pasar el mouse */
+}
+
+.categories li:active, .sizes li:active {
+  background-color: #d3d3d3; /* Color al hacer clic */
+}
+
+.categories li.selected, .sizes li.selected, .selected {
+  background-color: #ffd700; /* Color para botón seleccionado */
+  color: #800080;
+}
+
+/* Lista de productos */
+.productList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 4 columnas por defecto */
+  gap: 20px;
+  padding-left: 20px;
+  flex: 1;
+}
+
+/* Estilo responsivo para la lista de productos */
+@media (max-width: 1200px) {
+  .productList {
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas medianas */
+  }
+}
+
+@media (max-width: 768px) {
+  .productList {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .productList {
+    grid-template-columns: 1fr; /* 1 columna en pantallas muy pequeñas */
+  }
+}
+
+.productCard {
+  text-align: center;
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.productCard:hover {
+  transform: scale(1.05);
+}
+
+.productImage {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.productCard h4 {
+  font-size: 18px;
+  color: #333;
+  margin: 10px 0 5px;
+}
+
+.productCard p {
+  font-size: 14px;
+  color: #555;
+  margin: 5px 0;
+}
+
+/* Footer */
+.footer {
+  background-color: #000000;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Para alinear hacia arriba */
+  padding: 20px 40px;
+  margin-top: 20px;
+}
+
+.contact, .footerLogo, .hours {
+  text-align: left;
+}
+
+.footerLogo img {
+  height: 50px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.socialIcons a img {
+  width: 24px;
+  height: 24px;
+}
+
+.contact h1, .hours h1 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.contact p, .hours p {
+  font-size: 14px;
+  color: #fffefe;
+  margin: 2px 0;
+}
+
+.addToCartButton {
+  background-color: #db0d02;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.addToCartButton:hover {
+  background-color: #660066; 
+}

@@ -1,19 +1,39 @@
-import React from 'react';
+// src/components/inicio/Login.js
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './login.css'; 
+import './login.css';
 
 function Login() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    // Aquí iría la lógica para manejar el inicio de sesión (usando Firebase o tu backend)
+    console.log('Usuario:', username);
+    console.log('Contraseña:', password);
+  };
+
   return (
     <div className="login-container">
       <div className="login-form">
         <h2>Nombre de Usuario</h2>
-        <input type="text" placeholder="Tu nombre de usuario" />
+        <input
+          type="text"
+          placeholder="Tu nombre de usuario"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
         
         <h2>Contraseña</h2>
-        <input type="password" placeholder="Tu contraseña" />
+        <input
+          type="password"
+          placeholder="Tu contraseña"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
         
-        <button className="login-button">Iniciar Sesión</button>
-
+        <button className="login-button" onClick={handleLogin}>Iniciar Sesión</button>
         
         <Link to="/register" className="register-link">
           Regístrate

@@ -10,7 +10,7 @@ function Header() {
       </div>
       <nav className="nav">
         <NavLink to="/" exact activeClassName="active">Inicio</NavLink>
-        <NavLink to="/colecciones" activeClassName="active">Colecciones</NavLink>
+        <NavLink to="/colecciones" activeClassName="active">Coleccione</NavLink>
         <NavLink to="/nosotros" activeClassName="active">Nosotros</NavLink>
       </nav>
       <div className="header-actions">
@@ -18,11 +18,14 @@ function Header() {
           <input type="text" placeholder="Buscar tu ropa" />
         </div>
         
-        <Link to="/login"> {/* Asegúrate de que el enlace esté dirigido a "/login" */}
+        <Link to="/login">
           <img src="/user.png" alt="Perfil" className="icon" />
         </Link>
         
-        <img src="/cart.png" alt="Carrito" className="icon" />
+        {/* Agrega Link alrededor del ícono de carrito */}
+        <Link to="/cart"> 
+          <img src="/cart.png" alt="Carrito" className="icon" />
+        </Link>
       </div>
     </header>
   );

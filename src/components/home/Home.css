@@ -1,3 +1,4 @@
+/* Estilo general de la página */
 .home {
   background-color: #f9f9f9;
   color: #333;
@@ -62,6 +63,7 @@
   font-size: 2em;
   margin-bottom: 20px;
   color: #333;
+  text-align: center;
 }
 
 .products-grid {
@@ -70,8 +72,26 @@
   gap: 20px;
 }
 
+@media (max-width: 1200px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .product-card {
-  background-color: #fff; /* Fondo blanco */
+  background-color: #fff;
   border: 1px solid #ddd;
   padding: 15px;
   text-align: center;
@@ -84,7 +104,7 @@
 
 .product-image {
   width: 100%;
-  height: 250px; /* Tamaño ajustado */
+  height: 250px;
   overflow: hidden;
   margin-bottom: 10px;
   border-radius: 8px;
@@ -96,54 +116,42 @@
 .product-image img {
   width: auto;
   height: 100%;
-  object-fit: contain; 
+  object-fit: contain;
 }
 
-.product-details {
-  font-size: 1em;
-  color: #333;
-}
-
-.product-title {
-  font-size: 1.2em;
-  font-weight: bold;
+.product-details p {
   margin: 5px 0;
-  color: #333;
 }
 
-.product-price {
-  font-size: 1em;
-  color: #555;
-  margin: 5px 0 15px;
-}
-
+/* Botón de "Agregar al carrito" */
 .add-to-cart-btn {
-  background-color: #ff4500;
-  color: #fff;
-  border: none;
-  padding: 8px 15px;
+  background-color: #ff0000; /* Rojo */
+  color: #fff; /* Texto blanco */
+  border: none; /* Eliminar el borde */
+  padding: 10px 20px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 8px; /* Bordes redondeados */
   font-weight: bold;
+  font-size: 14px;
   transition: background-color 0.3s;
+  margin-top: 10px;
 }
 
 .add-to-cart-btn:hover {
-  background-color: #e63e00;
+  background-color: #cc0000; /* Oscurece el botón al pasar el mouse */
 }
-
 /* Sección de opiniones de clientes */
 .customer-reviews {
-  background-color: #000;
-  color: #fff;
-  padding: 20px 10px;
+  background-color: #f0f0f0; /* Fondo claro */
+  padding: 40px 20px;
   text-align: center;
 }
 
 .customer-reviews h3 {
-  font-size: 1.5em;
-  color: #fff;
-  margin-bottom: 15px;
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .reviews-grid {
@@ -155,40 +163,19 @@
 }
 
 .review-card {
-  background-color: #333;
-  padding: 10px;
+  background-color: #ffffff;
+  padding: 15px 20px;
   border-radius: 8px;
-  color: #ccc;
+  color: #555;
   font-style: italic;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Pie de página */
-.footer {
-  background-color: #111;
-  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
-  margin-top: 0; 
+  justify-content: center;
+  min-height: 100px;
+  transition: transform 0.3s ease;
 }
 
-.footer-section {
-  text-align: left;
-}
-
-.footer-logo img {
-  height: 50px;
-  border-radius: 5px;
-}
-
-.footer-section h4 {
-  margin-bottom: 10px;
-  color: #fff;
-}
-
-.footer-section p {
-  margin: 5px 0;
-  color: #aaa;
+.review-card:hover {
+  transform: scale(1.05); /* Aumenta un poco el tamaño al pasar el mouse */
 }

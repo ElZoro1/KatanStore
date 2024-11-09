@@ -1,39 +1,72 @@
-import React from 'react';
+// src/components/inicio/Register.js
+import React, { useState } from 'react';
 import './register.css';
 
 function Register() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+
+    console.log('Usuario:', username);
+    console.log('Contraseña:', password);
+    console.log('Correo:', email);
+    console.log('Teléfono:', phone);
+  };
+
   return (
     <div className="register-container">
       <div className="register-form">
-        <h2>𝕽𝖊𝖌í𝖘𝖙𝖗𝖆𝖙𝖊</h2>
-        
-        <label>Nombre de Usuario</label>
-        <input type="text" placeholder="Tu nombre de usuario" />
+        <h2>Nombre de Usuario</h2>
+        <input
+          type="text"
+          placeholder="Tu nombre de usuario"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
 
-        <label>Contraseña</label>
-        <input type="password" placeholder="Tu contraseña" />
+        <h2>Contraseña</h2>
+        <input
+          type="password"
+          placeholder="Tu contraseña"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
-        <label>Correo</label>
-        <input type="email" placeholder="Tu correo" />
+        <h2>Correo</h2>
+        <input
+          type="email"
+          placeholder="Tu correo"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
-        <label>Teléfono</label>
-        <input type="tel" placeholder="Tu teléfono" />
+        <h2>Teléfono</h2>
+        <input
+          type="tel"
+          placeholder="Tu teléfono"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+        />
 
-        <button className="register-button">Registrarse</button>
+        <button className="register-button" onClick={handleRegister}>
+          Registrarse
+        </button>
 
-        <div className="social-login">
-          <span>o</span>
-          <div className="social-icons">
-            <img src="/faceboo.png" alt="Facebook" />
-            <img src="/google.png" alt="Google" />
-            <img src="/windows.png" alt="Microsoft" />
-          </div>
+        <p className="separator">o</p>
+        <div className="social-icons">
+          <img src="/faceboo.png" alt="Facebook" className="icon" />
+          <img src="/google.png" alt="Google" className="icon" />
+          <img src="/windows.png" alt="Microsoft" className="icon" />
         </div>
       </div>
 
-      <div className="register-image">
-        <img src="/2.png" alt="Katanstore Logo" />
-        <h2>REGISTRA TUS <span>DATOS</span></h2>
+      <div className="register-banner">
+        <img src="/2.png" alt="Katanstore Logo" className="banner-image" />
+        <h1>REGISTRA TUS <span className="highlight">DATOS</span></h1>
       </div>
     </div>
   );
