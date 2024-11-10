@@ -1,15 +1,18 @@
+// src/firebaseConfig.js
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
 
-import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
-};
+  apiKey: "AIzaSyBzvuIDVqpV_q4gJ8SiJwkY07onYeDfwKI",
+  authDomain: "kata-app-83e08.firebaseapp.com",
+  projectId: "kata-app-83e08",
+  storageBucket: "kata-app-83e08.appspot.com",
+  messagingSenderId: "359110477565",
+  appId: "1:359110477565:web:e065bab5d7236313c2094",
 
+};
 const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app);
 export const auth = getAuth(app);

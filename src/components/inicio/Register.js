@@ -1,75 +1,105 @@
-// src/components/inicio/Register.js
 import React, { useState } from 'react';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { doc, setDoc } from 'firebase/firestore';
+import { useNavigate } from 'react-router-dom'; // Importa useNavigate
+import { auth, db } from '../../firebaseConfig'; 
 import './register.css';
 
-function Register() {
+const Register = () => {
   const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [phone, setPhone] = useState('');
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
+  const navigate = useNavigate(); // Usa useNavigate para redirección
 
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
+    setError(null);
+    setSuccess(null);
 
-    console.log('Usuario:', username);
-    console.log('Contraseña:', password);
-    console.log('Correo:', email);
-    console.log('Teléfono:', phone);
+    try {
+      // Crear usuario en Firebase Auth
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+
+      // Guardar información adicional en Firestore
+      await setDoc(doc(db, 'users', user.uid), {
+        username: username,
+        email: email,
+        phone: phone,
+        createdAt: new Date(),
+      });
+
+      setSuccess('¡Tu cuenta ha sido registrada con éxito!');
+      setUsername('');
+      setEmail('');
+      setPassword('');
+      setPhone('');
+
+      // Espera 2 segundos para que el usuario vea el mensaje y luego redirige al Home
+      setTimeout(() => {
+        navigate('/'); // Redirige al Home
+      }, 2000);
+      
+    } catch (error) {
+      setError(`Error en el registro: ${error.message}`);
+    }
   };
 
   return (
     <div className="register-container">
       <div className="register-form">
-        <h2>Nombre de Usuario</h2>
-        <input
-          type="text"
-          placeholder="Tu nombre de usuario"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
+        <h2>Registro</h2>
+        <form onSubmit={handleRegister}>
+          <input
+            type="text"
+            placeholder="Nombre de usuario"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          />
+          <input
+            type="email"
+            placeholder="Correo"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <input
+            type="password"
+            placeholder="Contraseña"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <input
+            type="text"
+            placeholder="Teléfono"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            required
+          />
+          <button className="register-button" type="submit">Registrarse</button>
+        </form>
+        {error && <p className="error-message">{error}</p>}
+        {success && <p className="success-message">{success}</p>} {/* Mostrar mensaje de éxito */}
 
-        <h2>Contraseña</h2>
-        <input
-          type="password"
-          placeholder="Tu contraseña"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-
-        <h2>Correo</h2>
-        <input
-          type="email"
-          placeholder="Tu correo"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-
-        <h2>Teléfono</h2>
-        <input
-          type="tel"
-          placeholder="Tu teléfono"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-        />
-
-        <button className="register-button" onClick={handleRegister}>
-          Registrarse
-        </button>
-
-        <p className="separator">o</p>
+        <div className="separator">o</div>
         <div className="social-icons">
-          <img src="/faceboo.png" alt="Facebook" className="icon" />
-          <img src="/google.png" alt="Google" className="icon" />
-          <img src="/windows.png" alt="Microsoft" className="icon" />
+          <i className="icon fab fa-facebook"></i>
+          <i className="icon fab fa-google"></i>
+          <i className="icon fab fa-windows"></i>
         </div>
       </div>
-
       <div className="register-banner">
-        <img src="/2.png" alt="Katanstore Logo" className="banner-image" />
+        <img className="banner-image" src="ruta-a-tu-imagen.png" alt="Katanstore Logo" />
+        <h1>KATANSTORE</h1>
         <h1>REGISTRA TUS <span className="highlight">DATOS</span></h1>
       </div>
     </div>
   );
-}
+};
 
 export default Register;

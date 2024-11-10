@@ -1,55 +1,56 @@
 // src/components/inicio/Login.js
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { auth } from '../../firebaseConfig'; // Importar la instancia de Firebase Auth
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { Link, useNavigate } from 'react-router-dom';
 import './login.css';
 
 function Login() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // Aquí iría la lógica para manejar el inicio de sesión (usando Firebase o tu backend)
-    console.log('Usuario:', username);
-    console.log('Contraseña:', password);
+    setError(""); // Limpiar mensaje de error
+
+    try {
+      // Iniciar sesión con Firebase Authentication
+      await signInWithEmailAndPassword(auth, email, password);
+      
+      navigate('/'); // Redirigir a la página principal si el inicio de sesión es exitoso
+    } catch (err) {
+      console.error("Error en inicio de sesión:", err);
+      setError("Credenciales incorrectas. Por favor, intente de nuevo.");
+    }
   };
 
   return (
     <div className="login-container">
       <div className="login-form">
-        <h2>Nombre de Usuario</h2>
-        <input
-          type="text"
-          placeholder="Tu nombre de usuario"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
+        <h2>Iniciar Sesión</h2>
         
-        <h2>Contraseña</h2>
-        <input
-          type="password"
-          placeholder="Tu contraseña"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+        <input 
+          type="email" 
+          placeholder="Tu correo" 
+          value={email} 
+          onChange={(e) => setEmail(e.target.value)} 
+        />
+        <input 
+          type="password" 
+          placeholder="Tu contraseña" 
+          value={password} 
+          onChange={(e) => setPassword(e.target.value)} 
         />
         
         <button className="login-button" onClick={handleLogin}>Iniciar Sesión</button>
         
-        <Link to="/register" className="register-link">
-          Regístrate
-        </Link>
-        
-        <p className="separator">o</p>
-        <div className="social-icons">
-          <img src="/faceboo.png" alt="Facebook" className="icon" />
-          <img src="/google.png" alt="Google" className="icon" />
-          <img src="/windows.png" alt="Microsoft" className="icon" />
-        </div>
-      </div>
+        {error && <p className="error-message">{error}</p>} 
 
-      <div className="login-banner">
-        <img src="/2.png" alt="Katanstore Logo" className="banner-image" />
-        <h1>INGRESA TUS <span className="highlight">DATOS</span></h1>
+        <Link to="/register" className="register-link">
+          ¿No tienes cuenta? Regístrate
+        </Link>
       </div>
     </div>
   );

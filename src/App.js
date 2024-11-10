@@ -1,4 +1,4 @@
-// src/App.js
+
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/home/Home';
@@ -10,8 +10,7 @@ import Coleccione from './components/Coleccione/Colecciones';
 import Cart from './components/Cart/Cart';
 import { AuthProvider } from './components/AuthContext';
 import { CartProvider } from './components/CartContext';
-
-function App() {
+function App() {  
   return (
     <AuthProvider>
       <CartProvider>
@@ -34,4 +33,3 @@ function App() {
 }
 
 export default App;
-

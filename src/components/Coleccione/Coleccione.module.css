@@ -1,16 +1,16 @@
-/* Fondo blanco en el contenedor principal */
+
 .coleccionesContainer {
   font-family: Arial, sans-serif;
-  background-color: #fff; /* Fondo blanco */
+  background-color: #fff; 
 }
 
-/* Encabezado */
+
 .header {
   background-color: #800080; /* Morado */
   color: #fff;
   text-align: center;
-  padding: 10px 10; /* Reducido el padding para disminuir la altura */
-  font-size: 20px; /* Ajustar el tamaño de la fuente si es necesario */
+  padding: 5% 5; /* Reducido el padding para disminuir la altura */
+  font-size: 10px; /* Ajustar el tamaño de la fuente si es necesario */
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;

@@ -1,11 +1,11 @@
-/* Estructura general del contenedor */
+
 .register-container {
   display: flex;
   height: 100vh;
   font-family: Arial, sans-serif;
 }
 
-/* Sección del formulario */
+
 .register-form {
   width: 50%;
   background-color: #f9f9f9;
@@ -18,29 +18,36 @@
 
 .register-form h2 {
   color: #333;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   font-weight: bold;
+  font-size: 1.5rem;
 }
 
 .register-form input {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-bottom: 15px;
   border: 1px solid #ddd;
   border-radius: 8px;
   background-color: #eaeaea;
+  font-size: 14px;
 }
 
 .register-button {
   background-color: #8c13f9;
   color: #fff;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 20px;
   font-size: 16px;
   border-radius: 8px;
   cursor: pointer;
-  margin-top: 15px;
   font-weight: bold;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.register-button:hover {
+  background-color: #6a0dab;
 }
 
 .separator {
@@ -48,20 +55,24 @@
   color: #666;
 }
 
-/* Iconos de redes sociales */
 .social-icons {
   display: flex;
   gap: 15px;
   margin-top: 10px;
 }
 
-.icon {
+.social-icons .icon {
   width: 30px;
   height: 30px;
   cursor: pointer;
+  filter: grayscale(100%);
 }
 
-/* Sección de banner */
+.social-icons .icon:hover {
+  filter: grayscale(0%);
+}
+
+
 .register-banner {
   width: 50%;
   background-color: #000;
@@ -74,27 +85,27 @@
 }
 
 .banner-image {
-  width: 200px;
+  width: 150px;
   margin-bottom: 20px;
 }
 
 .register-banner h1 {
-  font-size: 24px;
+  font-size: 2rem;
+  margin-top: 20px;
 }
 
 .highlight {
   color: #ff0000;
 }
 
-/* Enlace de registro */
-.register-link {
-  display: block;
+.success-message {
+  color: green;
   margin-top: 10px;
-  color: #8c13f9;
-  text-decoration: none;
   font-weight: bold;
 }
 
-.register-link:hover {
-  color: #6a0dab;
+.error-message {
+  color: red;
+  margin-top: 10px;
+  font-weight: bold;
 }
