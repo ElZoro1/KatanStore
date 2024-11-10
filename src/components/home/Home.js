@@ -1,11 +1,11 @@
 // src/components/home/Home.js
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useCart } from '../CartContext'; // Importa useCart en lugar de CartContext
+import { useCart } from '../CartContext'; 
 import './Home.css';
 
 function Home() {
-  const { addToCart } = useCart(); // Usamos useCart para obtener addToCart
+  const { addToCart } = useCart(); 
 
   const products = [
     { id: 1, img: 'ropa1.png', name: 'Sword Art Online', price: 15000, size: 'M', stock: 10 },
@@ -28,9 +28,6 @@ function Home() {
   return (
     <div className="home">
       <div className="banner">
-        <Link to="/cart">
-          <img src="/cart.png" alt="Carrito" className="icon cart-icon" />
-        </Link>
         <div className="banner-item">
           <img src="jujutsu.png" alt="Producto destacado" />
           <div className="banner-text">
