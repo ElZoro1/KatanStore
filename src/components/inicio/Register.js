@@ -94,7 +94,7 @@ const Register = () => {
         </div>
       </div>
       <div className="register-banner">
-        <img className="banner-image" src="ruta-a-tu-imagen.png" alt="Katanstore Logo" />
+        <img className="banner-image" src="2.png" alt="Katanstore Logo" />
         <h1>KATANSTORE</h1>
         <h1>REGISTRA TUS <span className="highlight">DATOS</span></h1>
       </div>

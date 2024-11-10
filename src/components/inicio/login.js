@@ -1,6 +1,6 @@
 // src/components/inicio/Login.js
 import React, { useState } from 'react';
-import { auth } from '../../firebaseConfig'; // Importar la instancia de Firebase Auth
+import { auth } from '../../firebaseConfig';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { Link, useNavigate } from 'react-router-dom';
 import './login.css';
@@ -13,13 +13,11 @@ function Login() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    setError(""); // Limpiar mensaje de error
+    setError("");
 
     try {
-      // Iniciar sesión con Firebase Authentication
       await signInWithEmailAndPassword(auth, email, password);
-      
-      navigate('/'); // Redirigir a la página principal si el inicio de sesión es exitoso
+      navigate('/'); // Redirige al Home después del inicio de sesión exitoso
     } catch (err) {
       console.error("Error en inicio de sesión:", err);
       setError("Credenciales incorrectas. Por favor, intente de nuevo.");
@@ -51,6 +49,13 @@ function Login() {
         <Link to="/register" className="register-link">
           ¿No tienes cuenta? Regístrate
         </Link>
+      </div>
+
+      {/* Sección del banner, igual que en Register */}
+      <div className="login-banner">
+        <img src="2.png" alt="Logo" className="banner-image" /> {/* Reemplaza con el path correcto de tu logo */}
+        <h1>TIENDA KATAN</h1>
+        <h2>REGISTRA TUS <span className="highlight">DATOS</span></h2>
       </div>
     </div>
   );
