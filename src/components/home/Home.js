@@ -7,6 +7,7 @@ import './Home.css';
 function Home() {
   const { addToCart } = useCart(); 
 
+  // Productos destacados
   const products = [
     { id: 1, img: 'ropa1.png', name: 'Sword Art Online', price: 15000, size: 'M', stock: 10 },
     { id: 2, img: 'pole1.png', name: 'Dragon Ball', price: 20000, size: 'L', stock: 8 },
@@ -19,6 +20,7 @@ function Home() {
     { id: 9, img: 'pole8.png', name: 'Bleach', price: 21000, size: 'M', stock: 2 },
   ];
 
+  // Reseñas de clientes
   const reviews = [
     "¡Qué rápida atención y excelente servicio!",
     "Me encanta la variedad de productos, ¡excelente calidad!",
@@ -27,23 +29,25 @@ function Home() {
 
   return (
     <div className="home">
+      {/* Sección de banner */}
       <div className="banner">
         <div className="banner-item">
           <img src="jujutsu.png" alt="Producto destacado" />
           <div className="banner-text">
             <h2>YA LLEGARON NUEVAS POLERAS JUJUTSU KAISEN</h2>
-            <button className="btn">Ir a lo Nuevo</button>
+            <Link to="/nosotros" className="btn">Ir a lo Nuevo</Link>
           </div>
         </div>
         <div className="banner-item">
           <img src="goku.png" alt="Colección" />
           <div className="banner-text">
             <h2>REVISA TODAS NUESTRAS COLECCIONES DISPONIBLES</h2>
-            <button className="btn">Ir a Colecciones</button>
+            <Link to="/colecciones" className="btn">Ir a Colecciones</Link>
           </div>
         </div>
       </div>
 
+      {/* Productos destacados */}
       <div className="featured-products">
         <h3>Productos Destacados</h3>
         <div className="products-grid">
@@ -66,6 +70,7 @@ function Home() {
         </div>
       </div>
 
+      {/* Reseñas de clientes */}
       <div className="customer-reviews">
         <h3>¿Qué piensan nuestros clientes?</h3>
         <div className="reviews-grid">
@@ -77,31 +82,30 @@ function Home() {
         </div>
       </div>
 
+      {/* Footer */}
       <footer className="footer">
         <div className="contact">
           <h1>CONTACTANOS</h1>
           <p>+56 9 8765 4321</p>
           <p>contacto@katanstore.com</p>
         </div>
-
         <div className="footer-logo">
-          <img src="/1.png" alt="Katanstore Logo" className="logo" />
+          <img src="1.png" alt="Katanstore Logo" className="logo" />
           <div className="social-icons">
             <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-              <img src="/instagram.png" alt="Instagram" />
+              <img src="instagram.png" alt="Instagram" />
             </a>
             <a href="https://www.whatsapp.com" target="_blank" rel="noopener noreferrer">
-              <img src="/whatsapp.png" alt="WhatsApp" />
+              <img src="whatsapp.png" alt="WhatsApp" />
             </a>
             <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
-              <img src="/tiktok.png" alt="TikTok" />
+              <img src="tiktok.png" alt="TikTok" />
             </a>
             <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-              <img src="/facebook.png" alt="Facebook" />
+              <img src="facebook.png" alt="Facebook" />
             </a>
           </div>
         </div>
-
         <div className="hours">
           <h1>Horario de Atención</h1>
           <p>Lunes a Viernes: 9:00 - 18:00</p>
