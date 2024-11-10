@@ -1,4 +1,4 @@
-/* src/components/inicio/login.css */
+
 
 .login-container {
   display: flex;
@@ -6,7 +6,7 @@
   font-family: Arial, sans-serif;
 }
 
-/* Sección del formulario */
+
 .login-form {
   width: 50%;
   background-color: #f9f9f9;
@@ -64,7 +64,7 @@
   font-weight: bold;
 }
 
-/* Sección de banner */
+
 .login-banner {
   width: 50%;
   background-color: #000;

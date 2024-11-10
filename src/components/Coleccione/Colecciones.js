@@ -1,6 +1,6 @@
 // src/components/Coleccione/Colecciones.js
 import React, { useState } from 'react';
-import { useCart } from '../CartContext'; // Importa useCart en lugar de CartContext
+import { useCart } from '../CartContext'; 
 import styles from './Coleccione.module.css';
 
 const categories = ['Dragon Ball', 'Naruto', 'One Piece', 'Attack on Titan', 'Sword Art Online', 'Jujutsu Kaisen'];
@@ -28,7 +28,7 @@ const products = [
 ];
 
 function Colecciones() {
-  const { addToCart } = useCart(); // Usamos useCart para obtener addToCart
+  const { addToCart } = useCart();
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedSize, setSelectedSize] = useState(null);
 

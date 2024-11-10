@@ -7,7 +7,7 @@ import './Home.css';
 function Home() {
   const { addToCart } = useCart(); 
 
-  // Productos destacados
+ 
   const products = [
     { id: 1, img: 'ropa1.png', name: 'Sword Art Online', price: 15000, size: 'M', stock: 10 },
     { id: 2, img: 'pole1.png', name: 'Dragon Ball', price: 20000, size: 'L', stock: 8 },
@@ -20,7 +20,7 @@ function Home() {
     { id: 9, img: 'pole8.png', name: 'Bleach', price: 21000, size: 'M', stock: 2 },
   ];
 
-  // Reseñas de clientes
+
   const reviews = [
     "¡Qué rápida atención y excelente servicio!",
     "Me encanta la variedad de productos, ¡excelente calidad!",
@@ -47,7 +47,7 @@ function Home() {
         </div>
       </div>
 
-      {/* Productos destacados */}
+
       <div className="featured-products">
         <h3>Productos Destacados</h3>
         <div className="products-grid">
@@ -70,7 +70,7 @@ function Home() {
         </div>
       </div>
 
-      {/* Reseñas de clientes */}
+
       <div className="customer-reviews">
         <h3>¿Qué piensan nuestros clientes?</h3>
         <div className="reviews-grid">
@@ -82,7 +82,7 @@ function Home() {
         </div>
       </div>
 
-      {/* Footer */}
+  
       <footer className="footer">
         <div className="contact">
           <h1>CONTACTANOS</h1>

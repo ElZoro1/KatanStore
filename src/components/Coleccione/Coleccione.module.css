@@ -91,11 +91,11 @@
 }
 
 .categories li.selected, .sizes li.selected, .selected {
-  background-color: #ffd700; /* Color para botón seleccionado */
+  background-color: #ffd700; 
   color: #800080;
 }
 
-/* Lista de productos */
+
 .productList {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 4 columnas por defecto */
@@ -104,22 +104,21 @@
   flex: 1;
 }
 
-/* Estilo responsivo para la lista de productos */
 @media (max-width: 1200px) {
   .productList {
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas medianas */
+    grid-template-columns: repeat(3, 1fr); 
   }
 }
 
 @media (max-width: 768px) {
   .productList {
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas pequeñas */
+    grid-template-columns: repeat(2, 1fr); 
   }
 }
 
 @media (max-width: 480px) {
   .productList {
-    grid-template-columns: 1fr; /* 1 columna en pantallas muy pequeñas */
+    grid-template-columns: 1fr; 
   }
 }
 
@@ -161,7 +160,7 @@
   color: #fff;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start; /* Para alinear hacia arriba */
+  align-items: flex-start; 
   padding: 20px 40px;
   margin-top: 20px;
 }

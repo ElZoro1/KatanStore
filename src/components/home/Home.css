@@ -1,11 +1,11 @@
-/* Estilo general de la página */
+
 .home {
   background-color: #f9f9f9;
   color: #333;
   font-family: Arial, sans-serif;
 }
 
-/* Banner principal */
+
 .banner {
   display: flex;
   justify-content: space-evenly;
@@ -53,7 +53,6 @@
   background-color: #cc00cc;
 }
 
-/* Sección de productos destacados */
 .featured-products {
   background-color: #f9f9f9;
   padding: 40px 20px;
@@ -123,14 +122,14 @@
   margin: 5px 0;
 }
 
-/* Botón de "Agregar al carrito" */
+
 .add-to-cart-btn {
-  background-color: #ff0000; /* Rojo */
-  color: #fff; /* Texto blanco */
-  border: none; /* Eliminar el borde */
+  background-color: #ff0000; 
+  color: #fff; 
+  border: none; 
   padding: 10px 20px;
   cursor: pointer;
-  border-radius: 8px; /* Bordes redondeados */
+  border-radius: 8px; 
   font-weight: bold;
   font-size: 14px;
   transition: background-color 0.3s;
@@ -138,11 +137,11 @@
 }
 
 .add-to-cart-btn:hover {
-  background-color: #cc0000; /* Oscurece el botón al pasar el mouse */
+  background-color: #cc0000; 
 }
-/* Sección de opiniones de clientes */
+
 .customer-reviews {
-  background-color: #f0f0f0; /* Fondo claro */
+  background-color: #f0f0f0; 
   padding: 40px 20px;
   text-align: center;
 }
@@ -177,5 +176,5 @@
 }
 
 .review-card:hover {
-  transform: scale(1.05); /* Aumenta un poco el tamaño al pasar el mouse */
+  transform: scale(1.05); 
 }

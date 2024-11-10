@@ -22,7 +22,7 @@ function Header() {
           <img src="/user.png" alt="Perfil" className="icon" />
         </Link>
         
-        {/* Agrega Link alrededor del ícono de carrito */}
+
         <Link to="/cart"> 
           <img src="/cart.png" alt="Carrito" className="icon" />
         </Link>

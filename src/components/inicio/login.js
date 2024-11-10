@@ -1,4 +1,4 @@
-// src/components/inicio/Login.js
+
 import React, { useState } from 'react';
 import { auth } from '../../firebaseConfig';
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -17,7 +17,7 @@ function Login() {
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate('/'); // Redirige al Home después del inicio de sesión exitoso
+      navigate('/'); 
     } catch (err) {
       console.error("Error en inicio de sesión:", err);
       setError("Credenciales incorrectas. Por favor, intente de nuevo.");
@@ -51,9 +51,9 @@ function Login() {
         </Link>
       </div>
 
-      {/* Sección del banner, igual que en Register */}
+
       <div className="login-banner">
-        <img src="2.png" alt="Logo" className="banner-image" /> {/* Reemplaza con el path correcto de tu logo */}
+        <img src="2.png" alt="Logo" className="banner-image" /> 
         <h1>TIENDA KATAN</h1>
         <h2>REGISTRA TUS <span className="highlight">DATOS</span></h2>
       </div>

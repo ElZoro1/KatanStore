@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
-import { useNavigate } from 'react-router-dom'; // Importa useNavigate
+import { useNavigate } from 'react-router-dom'; 
 import { auth, db } from '../../firebaseConfig'; 
 import './register.css';
 
@@ -12,7 +12,7 @@ const Register = () => {
   const [phone, setPhone] = useState('');
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
-  const navigate = useNavigate(); // Usa useNavigate para redirección
+  const navigate = useNavigate(); 
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -20,11 +20,10 @@ const Register = () => {
     setSuccess(null);
 
     try {
-      // Crear usuario en Firebase Auth
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
-      // Guardar información adicional en Firestore
+      
       await setDoc(doc(db, 'users', user.uid), {
         username: username,
         email: email,
@@ -38,9 +37,9 @@ const Register = () => {
       setPassword('');
       setPhone('');
 
-      // Espera 2 segundos para que el usuario vea el mensaje y luego redirige al Home
+     
       setTimeout(() => {
-        navigate('/'); // Redirige al Home
+        navigate('/'); 
       }, 2000);
       
     } catch (error) {
@@ -84,7 +83,7 @@ const Register = () => {
           <button className="register-button" type="submit">Registrarse</button>
         </form>
         {error && <p className="error-message">{error}</p>}
-        {success && <p className="success-message">{success}</p>} {/* Mostrar mensaje de éxito */}
+        {success && <p className="success-message">{success}</p>} 
 
         <div className="separator">o</div>
         <div className="social-icons">

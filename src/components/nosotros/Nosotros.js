@@ -4,13 +4,13 @@ import './Nosotros.css';
 function Nosotros() {
   return (
     <div className="nosotros">
-      {/* Imagen Principal y Contenido */}
+
       <section className="main-image">
         <img src="/2.png" alt="Imagen Principal" />
         <h1>KATANSTORE</h1>
       </section>
 
-      {/* Sección Introducción */}
+
       <section className="intro">
         <p>
           Somos una pyme apasionada por conectar a nuestros clientes con productos inspirados en la cultura nipona.
@@ -22,7 +22,6 @@ function Nosotros() {
         </p>
       </section>
 
-      {/* Sección Compromiso */}
       <section className="commitment">
         <div className="commitment-item">
           <img src="/3.png" alt="Compromiso" />
@@ -33,7 +32,7 @@ function Nosotros() {
           </p>
         </div>
 
-        {/* Sección de Calidad */}
+
         <div className="commitment-item">
           <img src="/4.png" alt="Calidad" />
           <p>
