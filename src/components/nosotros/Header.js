@@ -10,7 +10,7 @@ function Header() {
       </div>
       <nav className="nav">
         <NavLink to="/" exact activeClassName="active">Inicio</NavLink>
-        <NavLink to="/colecciones" activeClassName="active">Coleccione</NavLink>
+        <NavLink to="/colecciones" activeClassName="active">Colecciones</NavLink>
         <NavLink to="/nosotros" activeClassName="active">Nosotros</NavLink>
       </nav>
       <div className="header-actions">
