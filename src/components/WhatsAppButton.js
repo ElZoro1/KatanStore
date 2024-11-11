@@ -22,7 +22,7 @@ const WhatsAppButton = () => {
       }}
     >
       <img 
-        src="/icons.png" // Ruta relativa desde public
+        src="/icons.png" 
         alt="WhatsApp"
         style={{
           width: "48px",
