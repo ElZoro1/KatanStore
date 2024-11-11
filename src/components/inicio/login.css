@@ -1,71 +1,98 @@
+/* login.css */
 
-
-.login-container {
+.login-page {
   display: flex;
   height: 100vh;
-  font-family: Arial, sans-serif;
 }
 
-
-.login-form {
+.login-form-container {
   width: 50%;
-  background-color: #f9f9f9;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 50px;
+  background-color: #f7f7f7;
+}
+
+.login-form {
+  width: 80%;
+  max-width: 350px;
+  text-align: center;
 }
 
 .login-form h2 {
+  font-size: 1.2rem;
   color: #333;
-  margin-bottom: 20px;
   font-weight: bold;
+  margin-bottom: 8px;
 }
 
 .login-form input {
   width: 100%;
   padding: 12px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #eaeaea;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #ddd;
+  color: #333;
+  font-size: 1rem;
+}
+
+.login-form input::placeholder {
+  color: #888;
 }
 
 .login-button {
-  background-color: #8c13f9;
-  color: #fff;
-  border: none;
-  padding: 12px 20px;
-  font-size: 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
   width: 100%;
+  padding: 12px;
+  background-color: #a100ff;
+  color: #fff;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
-.login-button:hover {
-  background-color: #6a0dab;
+.social-login {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  color: #333;
+}
+
+.social-login span {
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+.social-login i {
+  font-size: 1.5rem;
+  margin: 0 8px;
+  color: #333;
+  cursor: pointer;
+}
+
+.social-login i:hover {
+  color: #555;
 }
 
 .register-link {
-  color: #8c13f9;
+  margin-top: 20px;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.register-link a {
+  color: #a100ff;
   text-decoration: none;
-  margin-top: 15px;
-}
-
-.register-link:hover {
-  text-decoration: underline;
-}
-
-.error-message {
-  color: red;
-  margin-top: 10px;
   font-weight: bold;
 }
 
+.register-link a:hover {
+  text-decoration: underline;
+}
 
-.login-banner {
+.login-image-container {
   width: 50%;
   background-color: #000;
   color: #fff;
@@ -73,19 +100,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 20px;
   text-align: center;
 }
 
-.banner-image {
+.login-image-container img {
   width: 150px;
   margin-bottom: 20px;
 }
 
-.login-banner h1 {
-  font-size: 2rem;
-  margin-top: 20px;
+.login-image-container h1 {
+  font-size: 2.2rem;
+  font-weight: bold;
 }
 
-.highlight {
-  color: #ff0000;
+.login-image-container span {
+  color: red;
 }

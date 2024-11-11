@@ -83,3 +83,10 @@
   height: 25px;
   cursor: pointer;
 }
+/* Header.css */
+.logout-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}

@@ -1,104 +1,54 @@
+// src/components/inicio/Register.js
 import React, { useState } from 'react';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { doc, setDoc } from 'firebase/firestore';
-import { useNavigate } from 'react-router-dom'; 
-import { auth, db } from '../../firebaseConfig'; 
+import { auth } from '../../firebaseConfig';
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from 'react-router-dom';
 import './register.css';
 
-const Register = () => {
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [phone, setPhone] = useState('');
-  const [error, setError] = useState(null);
-  const [success, setSuccess] = useState(null);
-  const navigate = useNavigate(); 
+function Register() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    setError(null);
-    setSuccess(null);
+    setError("");
 
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      const user = userCredential.user;
-
-      
-      await setDoc(doc(db, 'users', user.uid), {
-        username: username,
-        email: email,
-        phone: phone,
-        createdAt: new Date(),
-      });
-
-      setSuccess('¡Tu cuenta ha sido registrada con éxito!');
-      setUsername('');
-      setEmail('');
-      setPassword('');
-      setPhone('');
-
-     
-      setTimeout(() => {
-        navigate('/'); 
-      }, 2000);
-      
-    } catch (error) {
-      setError(`Error en el registro: ${error.message}`);
+      await createUserWithEmailAndPassword(auth, email, password);
+      navigate('/'); // Redirigir a la página principal después del registro
+    } catch (err) {
+      console.error("Error en registro:", err);
+      setError("Error en el registro. Inténtalo de nuevo.");
     }
   };
 
   return (
-    <div className="register-container">
-      <div className="register-form">
-        <h2>Registro</h2>
-        <form onSubmit={handleRegister}>
-          <input
-            type="text"
-            placeholder="Nombre de usuario"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
+    <div className="register-page">
+      <div className="register-form-container">
+        <form className="register-form" onSubmit={handleRegister}>
+          <h2>Correo Electrónico</h2>
+          <input 
+            type="email" 
+            placeholder="Tu correo electrónico" 
+            value={email} 
+            onChange={(e) => setEmail(e.target.value)} 
           />
-          <input
-            type="email"
-            placeholder="Correo"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
+          <h2>Contraseña</h2>
+          <input 
+            type="password" 
+            placeholder="Tu contraseña" 
+            value={password} 
+            onChange={(e) => setPassword(e.target.value)} 
           />
-          <input
-            type="password"
-            placeholder="Contraseña"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          <input
-            type="text"
-            placeholder="Teléfono"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            required
-          />
-          <button className="register-button" type="submit">Registrarse</button>
-        </form>
-        {error && <p className="error-message">{error}</p>}
-        {success && <p className="success-message">{success}</p>} 
+          <button type="submit" className="register-button">Registrarse</button>
 
-        <div className="separator">o</div>
-        <div className="social-icons">
-          <i className="icon fab fa-facebook"></i>
-          <i className="icon fab fa-google"></i>
-          <i className="icon fab fa-windows"></i>
-        </div>
-      </div>
-      <div className="register-banner">
-        <img className="banner-image" src="2.png" alt="Katanstore Logo" />
-        <h1>KATANSTORE</h1>
-        <h1>REGISTRA TUS <span className="highlight">DATOS</span></h1>
+          {error && <p style={{ color: 'red' }}>{error}</p>}
+        </form>
       </div>
     </div>
   );
-};
+}
 
 export default Register;
