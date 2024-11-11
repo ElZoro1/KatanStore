@@ -1,4 +1,4 @@
-// AdminDashboard.js
+// src/components/admin/AdminDashboard.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './AdminDashboard.css';
@@ -14,6 +14,9 @@ const AdminDashboard = () => {
         </Link>
         <Link to="/admin/orders" className="admin-link">
           Gestión de pedidos
+        </Link>
+        <Link to="/admin/upload" className="admin-link">
+          Subir Nuevo Producto
         </Link>
       </div>
       

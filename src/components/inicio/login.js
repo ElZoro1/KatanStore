@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 import { auth } from '../../firebaseConfig';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../AuthContext'; // Importa el contexto
+import { useAuth } from '../../AuthContext'; 
 import './login.css';
 
 function Login() {
-  const { user } = useAuth(); // Obtén el usuario del contexto
+  const { user } = useAuth(); 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -19,7 +19,7 @@ function Login() {
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate('/'); // Redirige a la página principal después del inicio de sesión
+      navigate('/'); 
     } catch (err) {
       console.error("Error en inicio de sesión:", err);
       setError("Credenciales incorrectas. Por favor, intente de nuevo.");

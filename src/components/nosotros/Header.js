@@ -1,16 +1,12 @@
 // src/components/nosotros/Header.js
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import { useAuth } from '../../AuthContext'; // Cambiada la ruta para apuntar correctamente
+import { auth } from '../../firebaseConfig';
 import './Header.css';
-import { useAuth } from '../AuthContext';
-import { auth } from '../../firebaseConfig'; // Importa auth desde firebaseConfig
 
 function Header() {
-  const { user } = useAuth(); // Obtén el usuario del contexto
-  
-  const handleLogout = () => {
-    auth.signOut(); // Función para cerrar sesión
-  };
+  const { user } = useAuth();
 
   return (
     <header className="header">
@@ -21,15 +17,24 @@ function Header() {
         <NavLink to="/" exact activeClassName="active">Inicio</NavLink>
         <NavLink to="/colecciones" activeClassName="active">Colecciones</NavLink>
         <NavLink to="/nosotros" activeClassName="active">Nosotros</NavLink>
+
+        {/* Mostrar enlaces adicionales solo para administradores */}
+        {user && user.role === 'admin' && (
+          <>
+            <NavLink to="/admin/upload" activeClassName="active">Subir</NavLink>
+            <NavLink to="/admin/delete" activeClassName="active">Eliminar</NavLink>
+            <NavLink to="/admin/orders" activeClassName="active">Pedidos en Curso</NavLink>
+          </>
+        )}
       </nav>
       <div className="header-actions">
         <div className="search-bar">
-          <input type="text" placeholder="Buscar tu ropa" />
+          <input type="text" placeholder="Busca tu ropa" />
         </div>
-
+        
         {user ? (
-          <button onClick={handleLogout} className="logout-button">
-            <img src="apagar.png" alt="Cerrar sesión" className="icon" />
+          <button onClick={() => auth.signOut()} className="logout-icon">
+            <img src="/cerrar.png" alt="Cerrar sesión" />
           </button>
         ) : (
           <Link to="/login">

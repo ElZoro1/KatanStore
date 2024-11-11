@@ -8,26 +8,29 @@ import Register from './components/inicio/Register';
 import Header from './components/nosotros/Header';
 import Coleccione from './components/Coleccione/Colecciones';
 import Cart from './components/Cart/Cart';
-import { AuthProvider } from './components/AuthContext';
+import { AuthProvider } from './AuthContext';
 import { CartProvider } from './components/CartContext';
+import { ProductProvider } from './ProductContext';
 
 function App() {  
   return (
     <AuthProvider>
       <CartProvider>
-        <Router>
-          <div className="App">
-            <Header />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/nosotros" element={<Nosotros />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/colecciones" element={<Coleccione />} />
-              <Route path="/cart" element={<Cart />} />
-            </Routes>
-          </div>
-        </Router>
+        <ProductProvider>
+          <Router>
+            <div className="App">
+              <Header />
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/nosotros" element={<Nosotros />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/colecciones" element={<Coleccione />} />
+                <Route path="/cart" element={<Cart />} />
+              </Routes>
+            </div>
+          </Router>
+        </ProductProvider>
       </CartProvider>
     </AuthProvider>
   );

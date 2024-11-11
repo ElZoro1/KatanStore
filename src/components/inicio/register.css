@@ -1,111 +1,93 @@
+/* src/components/inicio/register.css */
 
-.register-container {
+.register-page {
   display: flex;
   height: 100vh;
-  font-family: Arial, sans-serif;
+  background-color: black;
 }
 
-
-.register-form {
+.register-form-container {
   width: 50%;
-  background-color: #f9f9f9;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 50px;
+  background-color: #fff;
+  padding: 20px;
 }
 
 .register-form h2 {
-  color: #333;
-  margin-bottom: 20px;
+  font-family: 'Arial', sans-serif;
+  font-size: 1.2em;
+  color: black;
+  text-align: left;
+  width: 80%;
+  margin-bottom: 5px;
   font-weight: bold;
-  font-size: 1.5rem;
 }
 
 .register-form input {
-  width: 100%;
+  width: 80%;
   padding: 12px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
   border-radius: 8px;
-  background-color: #eaeaea;
-  font-size: 14px;
+  background-color: #eee;
+  font-size: 1em;
 }
 
 .register-button {
-  background-color: #8c13f9;
-  color: #fff;
+  width: 80%;
+  padding: 12px;
+  background-color: #a700ff;
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
   border: none;
-  padding: 12px 20px;
-  font-size: 16px;
   border-radius: 8px;
   cursor: pointer;
-  font-weight: bold;
-  width: 100%;
-  margin-top: 15px;
-}
-
-.register-button:hover {
-  background-color: #6a0dab;
-}
-
-.separator {
-  margin: 15px 0;
-  color: #666;
-}
-
-.social-icons {
-  display: flex;
-  gap: 15px;
   margin-top: 10px;
 }
 
-.social-icons .icon {
-  width: 30px;
-  height: 30px;
+.register-button:hover {
+  background-color: #9500e5;
+}
+
+.social-login {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.social-login i {
+  font-size: 24px;
+  color: black;
   cursor: pointer;
-  filter: grayscale(100%);
 }
 
-.social-icons .icon:hover {
-  filter: grayscale(0%);
-}
-
-
-.register-banner {
+.register-image-container {
   width: 50%;
-  background-color: #000;
-  color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: white;
+  background-color: black;
   text-align: center;
+  padding: 20px;
 }
 
-.banner-image {
-  width: 150px;
+.register-image-container img {
+  width: 120px;
   margin-bottom: 20px;
 }
 
-.register-banner h1 {
-  font-size: 2rem;
-  margin-top: 20px;
+.register-image-container h1 {
+  font-size: 2em;
+  color: white;
 }
 
-.highlight {
-  color: #ff0000;
-}
-
-.success-message {
-  color: green;
-  margin-top: 10px;
-  font-weight: bold;
-}
-
-.error-message {
+.register-image-container h1 span {
   color: red;
-  margin-top: 10px;
-  font-weight: bold;
 }
