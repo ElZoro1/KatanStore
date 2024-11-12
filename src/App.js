@@ -8,18 +8,22 @@ import Register from './components/inicio/Register';
 import Header from './components/nosotros/Header';
 import Coleccione from './components/Coleccione/Colecciones';
 import Cart from './components/Cart/Cart';
+import AdminUpload from './components/admin/AdminUpload';
+import AdminDelete from './components/admin/AdminDelete';
+import WhatsAppButton from './components/WhatsAppButton'; // Asegúrate de que esta ruta sea correcta
 import { AuthProvider } from './AuthContext';
 import { CartProvider } from './components/CartContext';
-import { ProductProvider } from './ProductContext';
+import { ProductProvider } from './ProductContext'; // Verifica que ProductContext.js esté en la raíz de src
 
 function App() {  
   return (
     <AuthProvider>
       <CartProvider>
-        <ProductProvider>
+        <ProductProvider> 
           <Router>
             <div className="App">
               <Header />
+              <WhatsAppButton /> {/* Botón de WhatsApp añadido aquí */}
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/nosotros" element={<Nosotros />} />
@@ -27,6 +31,8 @@ function App() {
                 <Route path="/register" element={<Register />} />
                 <Route path="/colecciones" element={<Coleccione />} />
                 <Route path="/cart" element={<Cart />} />
+                <Route path="/admin/upload" element={<AdminUpload />} />
+                <Route path="/admin/delete" element={<AdminDelete />} /> {/* Ruta para AdminDelete */}
               </Routes>
             </div>
           </Router>

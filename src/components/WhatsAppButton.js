@@ -1,7 +1,7 @@
 import React from 'react';
 
 const WhatsAppButton = () => {
-  const phoneNumber = "56983479764"; // Número de WhatsApp sin el símbolo '+'
+  const phoneNumber = "56983479764";
   const message = "¡Hola! Quisiera saber más sobre los productos de KatanStore.";
 
   return (

@@ -1,0 +1,62 @@
+/* src/components/admin/AdminDelete.css */
+
+.admin-delete-container {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 30px;
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .admin-delete-container h2 {
+    text-align: center;
+    color: #f8f8f8;
+    margin-bottom: 20px;
+  }
+  
+  .mensaje-exito {
+    color: #4caf50;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .lista-productos {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .producto-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  .producto-nombre {
+    font-weight: bold;
+  }
+  
+  .producto-categoria {
+    color: #888;
+    margin-left: 10px;
+  }
+  
+  .boton-eliminar {
+    background-color: #ff4d4d;
+    color: #ffffff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .boton-eliminar:hover {
+    background-color: #ff1a1a;
+  }
+  

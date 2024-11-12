@@ -1,72 +1,52 @@
 /* src/components/admin/AdminUpload.css */
-.upload-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 2rem auto;
-    max-width: 600px;
-    background-color: #1c1c1c;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .upload-title {
-    color: #ffffff;
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 1.5rem;
-    text-align: center;
-  }
-  
-  .upload-form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .upload-form label {
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-  }
-  
-  .upload-form input[type="text"],
-  .upload-form input[type="number"],
-  .upload-form input[type="file"] {
-    padding: 0.8rem;
-    font-size: 14px;
-    color: #333;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .upload-form input[type="text"]:focus,
-  .upload-form input[type="number"]:focus,
-  .upload-form input[type="file"]:focus {
-    outline: none;
-    border-color: #6a1b9a;
-  }
-  
-  .upload-button {
-    padding: 0.8rem;
-    background-color: #6a1b9a;
-    color: #ffffff;
-    font-weight: bold;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .upload-button:hover {
-    background-color: #5a1682;
-  }
-  
-  .upload-button:disabled {
-    background-color: #999;
-    cursor: not-allowed;
-  }
-  
+
+.admin-upload-container {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 30px;
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.admin-upload-container h2 {
+  text-align: center;
+  color: #f8f8f8;
+  margin-bottom: 20px;
+}
+
+.formulario-producto label {
+  display: block;
+  margin-top: 15px;
+  color: #ddd;
+}
+
+.formulario-producto input[type="text"],
+.formulario-producto input[type="number"],
+.formulario-producto input[type="file"],
+.formulario-producto select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 1px solid #555;
+  background-color: #333;
+  color: #ffffff;
+}
+
+.subir-button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background-color: #6a0dad;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.subir-button:hover {
+  background-color: #5c0ab8;
+}
