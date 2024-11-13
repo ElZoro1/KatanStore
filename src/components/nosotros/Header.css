@@ -9,9 +9,17 @@
 }
 
 
-.logo-section {
+.logout-icon {
+  background-color: #000; /* Fondo negro */
+  border: none;
+  border-radius: 50%; /* Para hacerlo circular */
+  padding: 5px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
 }
 
 .logo {
