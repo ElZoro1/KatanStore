@@ -1,4 +1,3 @@
-// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/home/Home';
@@ -10,11 +9,12 @@ import Coleccione from './components/Coleccione/Colecciones';
 import Cart from './components/Cart/Cart';
 import AdminUpload from './components/admin/AdminUpload';
 import AdminDelete from './components/admin/AdminDelete';
-import OrderPage from './components/admin/OrderPage'; // Ruta confirmada para OrderPage
+import OrderPage from './components/admin/OrderPage';
+import WhatsAppButton from './components/WhatsAppButton'; // Importa el botón de WhatsApp
 import { AuthProvider } from './AuthContext';
 import { CartProvider } from './components/CartContext';
 import { ProductProvider } from './ProductContext';
-import { OrderProvider } from './OrderContext'; // Importación de OrderProvider
+import { OrderProvider } from './OrderContext';
 
 function App() {  
   return (
@@ -34,8 +34,9 @@ function App() {
                   <Route path="/cart" element={<Cart />} />
                   <Route path="/admin/upload" element={<AdminUpload />} />
                   <Route path="/admin/delete" element={<AdminDelete />} />
-                  <Route path="/admin/orders" element={<OrderPage />} /> {/* Ruta agregada para pedidos */}
+                  <Route path="/admin/orders" element={<OrderPage />} />
                 </Routes>
+                <WhatsAppButton /> 
               </div>
             </Router>
           </OrderProvider>
