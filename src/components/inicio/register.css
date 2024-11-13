@@ -1,5 +1,4 @@
 
-
 .register-page {
   display: flex;
   height: 100vh;
@@ -13,7 +12,12 @@
   justify-content: center;
   align-items: center;
   background-color: #fff;
-  padding: 20px;
+  padding: 40px 20px; 
+}
+
+.register-form {
+  width: 100%;
+  max-width: 400px; 
 }
 
 .register-form h2 {
@@ -21,15 +25,14 @@
   font-size: 1.2em;
   color: black;
   text-align: left;
-  width: 80%;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   font-weight: bold;
 }
 
 .register-form input {
-  width: 80%;
+  width: 100%; 
   padding: 12px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 8px;
   background-color: #eee;
@@ -37,7 +40,7 @@
 }
 
 .register-button {
-  width: 80%;
+  width: 100%; 
   padding: 12px;
   background-color: #a700ff;
   color: white;
