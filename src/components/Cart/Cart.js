@@ -1,3 +1,4 @@
+// src/components/Cart/Cart.js
 import React from 'react';
 import { useCart } from '../CartContext'; 
 import { useOrder } from '../../OrderContext'; // Importa el contexto de pedidos
@@ -10,12 +11,12 @@ const Cart = () => {
   const handleCheckout = () => {
     if (cartItems.length === 0) return;
 
-    // Crear un nuevo pedido
+    // Crear un nuevo pedido con un estado inicial y los productos del carrito
     const newOrder = {
-      id: Date.now(), // ID único para el pedido
-      items: cartItems,
-      status: 'En curso',
-      total: calculateTotal(),
+      id: Date.now().toString(), // ID único para el pedido
+      estado: 'Esperando Confirmación', // Estado inicial del pedido
+      productos: cartItems, // Productos en el pedido
+      total: calculateTotal(), // Total del pedido
     };
 
     addOrder(newOrder); // Agrega el pedido al contexto de pedidos en curso
