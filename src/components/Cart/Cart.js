@@ -24,7 +24,7 @@ const Cart = () => {
 
   const handleTransferPayment = () => {
     const message = `Hola, buenas. Quiero pagar con transferencia. Mi total es: $${calculateTotal().toLocaleString()}`;
-    const whatsappURL = `https://wa.me/56983479764?text=${encodeURIComponent(message)}`; 
+    const whatsappURL = `https://wa.me/56950195789?text=${encodeURIComponent(message)}`; 
     window.open(whatsappURL, '_blank');
   };
 
