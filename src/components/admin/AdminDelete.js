@@ -1,4 +1,4 @@
-// src/components/admin/AdminDelete.js
+
 import React, { useState } from 'react';
 import './AdminDelete.css';
 
@@ -20,7 +20,7 @@ const AdminDelete = () => {
       alert("Por favor, selecciona todos los campos.");
       return;
     }
-    // Lógica para eliminar el producto
+
     console.log("Eliminando:", { category, product, size });
   };
 

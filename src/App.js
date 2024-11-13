@@ -10,7 +10,7 @@ import Cart from './components/Cart/Cart';
 import AdminUpload from './components/admin/AdminUpload';
 import AdminDelete from './components/admin/AdminDelete';
 import OrderPage from './components/admin/OrderPage';
-import WhatsAppButton from './components/WhatsAppButton'; // Importa el botón de WhatsApp
+import WhatsAppButton from './components/WhatsAppButton'; 
 import { AuthProvider } from './AuthContext';
 import { CartProvider } from './components/CartContext';
 import { ProductProvider } from './ProductContext';

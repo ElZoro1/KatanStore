@@ -1,27 +1,25 @@
 // src/components/Cart/Cart.js
 import React from 'react';
 import { useCart } from '../CartContext'; 
-import { useOrder } from '../../OrderContext'; // Importa el contexto de pedidos
+import { useOrder } from '../../OrderContext'; 
 import './Cart.css';
 
 const Cart = () => {
   const { cartItems, removeFromCart, calculateTotal, clearCart } = useCart(); 
-  const { addOrder } = useOrder(); // Obtiene la función para agregar un pedido
+  const { addOrder } = useOrder(); 
 
   const handleCheckout = () => {
     if (cartItems.length === 0) return;
-
-    // Crear un nuevo pedido con un estado inicial y los productos del carrito
     const newOrder = {
-      id: Date.now().toString(), // ID único para el pedido
-      estado: 'Esperando Confirmación', // Estado inicial del pedido
-      productos: cartItems, // Productos en el pedido
-      total: calculateTotal(), // Total del pedido
+      id: Date.now().toString(), 
+      estado: 'Esperando Confirmación', 
+      productos: cartItems, 
+      total: calculateTotal(), 
     };
 
-    addOrder(newOrder); // Agrega el pedido al contexto de pedidos en curso
-    clearCart(); // Vacía el carrito después de hacer el pedido
-    alert('Pedido realizado con éxito'); // Muestra una alerta de confirmación
+    addOrder(newOrder); 
+    clearCart(); 
+    alert('Pedido realizado con éxito'); 
   };
 
   return (

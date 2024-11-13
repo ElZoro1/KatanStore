@@ -1,4 +1,4 @@
-// src/components/admin/AdminUpload.js
+
 import React, { useState } from 'react';
 import './AdminUpload.css';
 
@@ -15,7 +15,7 @@ const AdminUpload = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aquí agregas la lógica para subir el producto
+
     console.log('Producto subido:', { nombre, precio, tallas, categoria, imagen });
   };
 

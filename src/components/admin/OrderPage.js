@@ -1,4 +1,4 @@
-// src/components/admin/OrderPage.js
+
 import React from 'react';
 import { useOrder } from '../../OrderContext';
 import './OrderPage.css';
@@ -15,15 +15,9 @@ const OrderPage = () => {
         orders.map((order, index) => (
           <div key={order.id} className="order-card">
             <h3>Pedido {index + 1}</h3>
-            <p className="order-number">Número de orden: #{order.id}</p>
-            
-            {/* Estado actual del pedido */}
+            <p className="order-number">Número de orden: #{order.id}</p>         
             <p className="order-status"><strong>Estado:</strong> {order.estado}</p>
-
-            {/* Verificación para evitar errores si el total no está definido */}
             <p className="total-label"><strong>Total:</strong> ${order.total ? order.total.toLocaleString() : 'N/A'}</p>
-
-            {/* Listado de productos en el pedido */}
             {order.productos && order.productos.length > 0 && (
               <div className="product-details">
                 <h4 className="products-label">Productos:</h4>

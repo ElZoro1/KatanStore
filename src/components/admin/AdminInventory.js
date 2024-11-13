@@ -1,4 +1,4 @@
-// src/components/admin/AdminInventory.js
+
 import React, { useState } from 'react';
 import { useProducts } from '../../ProductContext';
 
@@ -16,8 +16,6 @@ const AdminInventory = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Crear objeto del producto con datos e imagen como URL temporal (local)
     const newProduct = {
       id: Date.now(),
       name: productName,
