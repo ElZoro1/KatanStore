@@ -18,7 +18,7 @@ function Register() {
 
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      navigate('/'); // Redirige a la página principal
+      navigate('/'); 
     } catch (err) {
       console.error("Error en registro:", err);
       setError("Error en el registro. Inténtalo de nuevo.");
@@ -70,7 +70,7 @@ function Register() {
       </div>
       
       <div className="register-image-container">
-        <img src="2.png" alt="Katanstore Logo" /> {/* Cambia 'logo.png' al nombre de tu imagen */}
+        <img src="2.png" alt="Katanstore Logo" /> 
         <h1>REGISTRA TUS <span>DATOS</span></h1>
       </div>
     </div>

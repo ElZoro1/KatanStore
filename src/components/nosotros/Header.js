@@ -1,7 +1,7 @@
-// src/components/nosotros/Header.js
+
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { useAuth } from '../../AuthContext'; // Cambiada la ruta para apuntar correctamente
+import { useAuth } from '../../AuthContext'; 
 import { auth } from '../../firebaseConfig';
 import './Header.css';
 
@@ -18,7 +18,6 @@ function Header() {
         <NavLink to="/colecciones" activeClassName="active">Colecciones</NavLink>
         <NavLink to="/nosotros" activeClassName="active">Nosotros</NavLink>
 
-        {/* Mostrar enlaces adicionales solo para administradores */}
         {user && user.role === 'admin' && (
           <>
             <NavLink to="/admin/upload" activeClassName="active">Subir</NavLink>

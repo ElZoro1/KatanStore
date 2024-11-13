@@ -6,24 +6,22 @@
 
 
 .header {
-  background-color: #800080; /* Morado */
+  background-color: #800080; 
   color: #fff;
   text-align: center;
-  padding: 5% 5; /* Reducido el padding para disminuir la altura */
-  font-size: 10px; /* Ajustar el tamaño de la fuente si es necesario */
+  padding: 5% 5; 
+  font-size: 10px; 
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-
-/* Contenido principal */
 .mainContent {
   display: flex;
   padding: 20px;
 }
 
-/* Sidebar */
+
 .sidebar {
   width: 250px;
   padding: 20px;
@@ -32,7 +30,6 @@
   gap: 20px;
 }
 
-/* Secciones de categorías y tallas */
 .categories, .sizes {
   background-color: #800080;
   padding: 20px;
@@ -57,17 +54,17 @@
   padding-bottom: 10px;
 }
 
-/* Lista de botones */
+
 .categories ul, .sizes ul {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px; /* Espacio entre botones */
+  gap: 10px; 
 }
 
-/* Estilo de cada botón */
+
 .categories li, .sizes li, .button {
   background-color: #fff;
   color: #800080;
@@ -83,11 +80,11 @@
 }
 
 .categories li:hover, .sizes li:hover, .button:hover {
-  background-color: #e0e0e0; /* Cambia el color de fondo al pasar el mouse */
+  background-color: #e0e0e0; 
 }
 
 .categories li:active, .sizes li:active {
-  background-color: #d3d3d3; /* Color al hacer clic */
+  background-color: #d3d3d3; 
 }
 
 .categories li.selected, .sizes li.selected, .selected {
@@ -98,7 +95,7 @@
 
 .productList {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 4 columnas por defecto */
+  grid-template-columns: repeat(3, 1fr); 
   gap: 20px;
   padding-left: 20px;
   flex: 1;

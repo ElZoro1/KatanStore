@@ -3,46 +3,85 @@ import React, { useState } from 'react';
 import './AdminDelete.css';
 
 const AdminDelete = () => {
+  const [category, setCategory] = useState("");
+  const [product, setProduct] = useState("");
+  const [size, setSize] = useState("");
 
-  const [productos, setProductos] = useState([
-    { id: 1, nombre: 'Producto 1', categoria: 'Colecciones' },
-    { id: 2, nombre: 'Producto 2', categoria: 'Home' },
-    { id: 3, nombre: 'Producto 3', categoria: 'Colecciones' },
-  ]);
-  const [mensaje, setMensaje] = useState('');
+  const categories = ["Colecciones", "Hogar"];
+  const products = [
+    { id: 1, name: "Producto 1", category: "Colecciones" },
+    { id: 2, name: "Producto 2", category: "Hogar" },
+    { id: 3, name: "Producto 3", category: "Colecciones" },
+  ];
+  const sizes = ["S", "M", "L", "XL"];
 
-  const handleDelete = (productoId) => {
-
-    const nuevosProductos = productos.filter((producto) => producto.id !== productoId);
-    setProductos(nuevosProductos);
-
-    // Mostrar mensaje de confirmación
-    setMensaje('Producto eliminado correctamente');
-    setTimeout(() => setMensaje(''), 3000); 
+  const handleDelete = () => {
+    if (!category || !product || !size) {
+      alert("Por favor, selecciona todos los campos.");
+      return;
+    }
+    // Lógica para eliminar el producto
+    console.log("Eliminando:", { category, product, size });
   };
 
   return (
     <div className="admin-delete-container">
-      <h2>Eliminar Producto</h2>
+      <h1 className="delete-title">Eliminar Producto</h1>
+      <form className="delete-form">
+        <div className="form-group">
+          <label htmlFor="category">Categoría</label>
+          <select 
+            id="category"
+            value={category} 
+            onChange={(e) => setCategory(e.target.value)}
+          >
+            <option value="">Selecciona una categoría</option>
+            {categories.map((cat, idx) => (
+              <option key={idx} value={cat}>{cat}</option>
+            ))}
+          </select>
+        </div>
 
-      {mensaje && <p className="mensaje-exito">{mensaje}</p>}
+        <div className="form-group">
+          <label htmlFor="product">Producto</label>
+          <select 
+            id="product"
+            value={product} 
+            onChange={(e) => setProduct(e.target.value)}
+          >
+            <option value="">Selecciona un producto</option>
+            {products
+              .filter((p) => p.category === category)
+              .map((p) => (
+                <option key={p.id} value={p.name}>{p.name}</option>
+              ))}
+          </select>
+        </div>
 
-      <ul className="lista-productos">
-        {productos.map((producto) => (
-          <li key={producto.id} className="producto-item">
-            <span className="producto-nombre">{producto.nombre}</span>
-            <span className="producto-categoria">({producto.categoria})</span>
-            <button
-              className="boton-eliminar"
-              onClick={() => handleDelete(producto.id)}
-            >
-              Eliminar
-            </button>
-          </li>
-        ))}
-      </ul>
+        <div className="form-group">
+          <label htmlFor="size">Talla</label>
+          <select 
+            id="size"
+            value={size} 
+            onChange={(e) => setSize(e.target.value)}
+          >
+            <option value="">Selecciona una talla</option>
+            {sizes.map((sz, idx) => (
+              <option key={idx} value={sz}>{sz}</option>
+            ))}
+          </select>
+        </div>
 
-      {productos.length === 0 && <p>No hay productos disponibles para eliminar.</p>}
+        <button 
+          type="button"
+          className="delete-button"
+          onClick={handleDelete}
+        >
+          Eliminar
+        </button>
+
+        <p className="notice">Seleccione todos los campos antes de eliminar.</p>
+      </form>
     </div>
   );
 };

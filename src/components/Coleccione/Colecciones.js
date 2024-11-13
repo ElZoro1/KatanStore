@@ -1,4 +1,4 @@
-// src/components/Coleccione/Colecciones.js
+
 import React, { useState } from 'react';
 import { useCart } from '../CartContext'; 
 import styles from './Coleccione.module.css';

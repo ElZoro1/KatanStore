@@ -1,4 +1,4 @@
-// src/components/home/Home.js
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../CartContext'; 
@@ -29,7 +29,6 @@ function Home() {
 
   return (
     <div className="home">
-      {/* Sección de banner */}
       <div className="banner">
         <div className="banner-item">
           <img src="jujutsu.png" alt="Producto destacado" />

@@ -1,4 +1,3 @@
-// src/components/inicio/Login.js
 import React, { useState } from 'react';
 import { auth } from '../../firebaseConfig';
 import { signInWithEmailAndPassword } from "firebase/auth";

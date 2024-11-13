@@ -1,4 +1,3 @@
-// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/home/Home';
@@ -10,32 +9,35 @@ import Coleccione from './components/Coleccione/Colecciones';
 import Cart from './components/Cart/Cart';
 import AdminUpload from './components/admin/AdminUpload';
 import AdminDelete from './components/admin/AdminDelete';
-import WhatsAppButton from './components/WhatsAppButton'; // Asegúrate de que esta ruta sea correcta
+import OrderPage from './components/admin/OrderPage'; 
 import { AuthProvider } from './AuthContext';
 import { CartProvider } from './components/CartContext';
-import { ProductProvider } from './ProductContext'; // Verifica que ProductContext.js esté en la raíz de src
+import { ProductProvider } from './ProductContext';
+import { OrderProvider } from './OrderContext';
 
 function App() {  
   return (
     <AuthProvider>
       <CartProvider>
-        <ProductProvider> 
-          <Router>
-            <div className="App">
-              <Header />
-              <WhatsAppButton /> {/* Botón de WhatsApp añadido aquí */}
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/nosotros" element={<Nosotros />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/register" element={<Register />} />
-                <Route path="/colecciones" element={<Coleccione />} />
-                <Route path="/cart" element={<Cart />} />
-                <Route path="/admin/upload" element={<AdminUpload />} />
-                <Route path="/admin/delete" element={<AdminDelete />} /> {/* Ruta para AdminDelete */}
-              </Routes>
-            </div>
-          </Router>
+        <ProductProvider>
+          <OrderProvider> 
+            <Router>
+              <div className="App">
+                <Header />
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/nosotros" element={<Nosotros />} />
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/register" element={<Register />} />
+                  <Route path="/colecciones" element={<Coleccione />} />
+                  <Route path="/cart" element={<Cart />} />
+                  <Route path="/admin/upload" element={<AdminUpload />} />
+                  <Route path="/admin/delete" element={<AdminDelete />} />
+                  <Route path="/admin/orders" element={<OrderPage />} /> 
+                </Routes>
+              </div>
+            </Router>
+          </OrderProvider>
         </ProductProvider>
       </CartProvider>
     </AuthProvider>
