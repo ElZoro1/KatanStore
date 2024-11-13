@@ -44,7 +44,6 @@
   transform: scale(1.02);
 }
 
-/* Títulos de las secciones */
 .categories h3, .sizes h3 {
   font-size: 18px;
   font-weight: bold;
