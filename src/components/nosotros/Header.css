@@ -10,9 +10,9 @@
 
 
 .logout-icon {
-  background-color: #000; /* Fondo negro */
+  background-color: #000; 
   border: none;
-  border-radius: 50%; /* Para hacerlo circular */
+  border-radius: 50%; 
   padding: 5px;
   display: flex;
   align-items: center;
