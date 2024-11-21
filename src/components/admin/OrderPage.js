@@ -23,7 +23,7 @@ const OrderPage = () => {
           {orders.map((order) => (
             <tr key={order.id}>
               <td>{order.id}</td>
-              <td>{order.fecha ? order.fecha.toLocaleDateString() : '14/11/2024'}</td>
+              <td>{order.fecha ? order.fecha.toLocaleDateString() : '21/11/2024'}</td>
               <td>{order.estado}</td>
               <td>${order.total ? order.total.toLocaleString() : 'N/D'}</td>
               <td>

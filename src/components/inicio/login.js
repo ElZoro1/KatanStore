@@ -25,11 +25,15 @@ function Login() {
     }
   };
 
+  const handleSocialLogin = (platform) => {
+    alert(`Iniciar sesión con ${platform} no está implementado aún.`);
+  };
+
   return (
     <div className="login-page">
       <div className="login-form-container">
         <form className="login-form" onSubmit={handleLogin}>
-          <h2>Nombre de Usuario</h2>
+          <h2>Correo electronico</h2>
           <input 
             type="email" 
             placeholder="Tu nombre de usuario" 
@@ -46,13 +50,32 @@ function Login() {
           <button type="submit" className="login-button">Iniciar Sesión</button>
 
           {error && <p style={{ color: 'red' }}>{error}</p>}
-
           <div className="social-login">
-            <span>•</span>
-            <i className="fa fa-facebook"></i>
-            <i className="fa fa-google"></i>
-            <i className="fa fa-windows"></i>
-          </div>
+         
+           <img
+             src="faceboo.png"
+               alt="Iniciar sesión con Facebook"
+                onClick={() => handleSocialLogin('Facebook')}
+                   className="social-icon"
+             />
+
+        
+              <img
+                 src="/google.png"
+                   alt="Iniciar sesión con Google"
+                     onClick={() => handleSocialLogin('Google')}
+                  className="social-icon"
+  />
+
+         
+                 <img
+                    src="windows.png"
+                       alt="Iniciar sesión con Microsoft"
+                           onClick={() => handleSocialLogin('Microsoft')}
+                             className="social-icon"
+                              />
+                   </div>
+
 
           <p className="register-link">
             ¿No tienes cuenta? <Link to="/register">Regístrate aquí</Link>

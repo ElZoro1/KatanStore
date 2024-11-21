@@ -61,10 +61,26 @@ function Register() {
 
           {error && <p style={{ color: 'red' }}>{error}</p>}
 
+          {/* Sección de íconos de redes sociales */}
           <div className="social-login">
-            <i className="fa fa-facebook"></i>
-            <i className="fa fa-google"></i>
-            <i className="fa fa-windows"></i>
+            <img 
+              src="/faceboo.png" 
+              alt="Registrar con Facebook" 
+              className="social-icon" 
+              onClick={() => alert('Registro con Facebook')} 
+            />
+            <img 
+              src="/google.png" 
+              alt="Registrar con Google" 
+              className="social-icon" 
+              onClick={() => alert('Registro con Google')} 
+            />
+            <img 
+              src="windows.png"
+              alt="Registrar con Microsoft" 
+              className="social-icon" 
+              onClick={() => alert('Registro con Microsoft')} 
+            />
           </div>
         </form>
       </div>

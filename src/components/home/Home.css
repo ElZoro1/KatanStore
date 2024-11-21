@@ -178,3 +178,19 @@
 .review-card:hover {
   transform: scale(1.05); 
 }
+.location-button {
+  background-color: #ff0808; 
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.location-button:hover {
+  background-color: #007acc; 
+}

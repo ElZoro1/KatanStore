@@ -102,37 +102,47 @@ function Colecciones() {
         </section>
       </div>
 
-      <footer className={styles.footer}>
-        <div className={styles.contact}>
-          <h1>CONTACTANOS</h1>
-          <p>+56 9 8765 4321</p>
-          <p>contacto@katanstore.com</p>
-        </div>
+      <footer className="footer">
+  <div className="contact">
+    <h1>CONTACTANOS</h1>
+    <p>+56 9 8765 4321</p>
+    <p>contacto@katanstore.com</p>
+    <button
+      className="location-button"
+      onClick={() =>
+        window.open(
+          'https://www.google.cl/maps/place/La+Condesa,+La+Florida,+Regi%C3%B3n+Metropolitana/@-33.5445009,-70.5769715,17.63z/data=!4m6!3m5!1s0x9662d0df0b107de9:0x969edcf46a91acf3!8m2!3d-33.54423!4d-70.5758719!16s%2Fg%2F1tcz9jfg?entry=ttu&g_ep=EgoyMDI0MTExOC4wIKXMDSoASAFQAw%3D%3D',
+          '_blank'
+        )
+      }
+    >
+      Ver ubicación de la tienda
+    </button>
+  </div>
+  <div className="footer-logo">
+    <img src="1.png" alt="Katanstore Logo" className="logo" />
+    <div className="social-icons">
+      <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+        <img src="instagram.png" alt="Instagram" />
+      </a>
+      <a href="https://www.whatsapp.com" target="_blank" rel="noopener noreferrer">
+        <img src="whatsapp.png" alt="WhatsApp" />
+      </a>
+      <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
+        <img src="tiktok.png" alt="TikTok" />
+      </a>
+      <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+        <img src="facebook.png" alt="Facebook" />
+      </a>
+    </div>
+  </div>
+  <div className="hours">
+    <h1>Horario de Atención</h1>
+    <p>Lunes a Viernes: 9:00 - 18:00</p>
+    <p>Sábados: 10:00 - 14:00</p>
+  </div>
+</footer>
 
-        <div className={styles.footerLogo}>
-          <img src="/1.png" alt="Katanstore Logo" className="logo" />
-          <div className="social-icons">
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-              <img src="/instagram.png" alt="Instagram" />
-            </a>
-            <a href="https://www.whatsapp.com" target="_blank" rel="noopener noreferrer">
-              <img src="/whatsapp.png" alt="WhatsApp" />
-            </a>
-            <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
-              <img src="/tiktok.png" alt="TikTok" />
-            </a>
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-              <img src="/facebook.png" alt="Facebook" />
-            </a>
-          </div>
-        </div>
-
-        <div className={styles.hours}>
-          <h1>Horario de Atención</h1>
-          <p>Lunes a Viernes: 9:00 - 18:00</p>
-          <p>Sábados: 10:00 - 14:00</p>
-        </div>
-      </footer>
     </div>
   );
 }
