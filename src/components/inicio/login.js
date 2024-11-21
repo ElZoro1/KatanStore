@@ -2,11 +2,9 @@ import React, { useState } from 'react';
 import { auth } from '../../firebaseConfig';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../../AuthContext'; 
 import './login.css';
 
 function Login() {
-  const { user } = useAuth(); 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -33,10 +31,10 @@ function Login() {
     <div className="login-page">
       <div className="login-form-container">
         <form className="login-form" onSubmit={handleLogin}>
-          <h2>Correo electronico</h2>
+          <h2>Correo electrónico</h2>
           <input 
             type="email" 
-            placeholder="Tu nombre de usuario" 
+            placeholder="Tu correo electrónico" 
             value={email} 
             onChange={(e) => setEmail(e.target.value)} 
           />
@@ -50,32 +48,27 @@ function Login() {
           <button type="submit" className="login-button">Iniciar Sesión</button>
 
           {error && <p style={{ color: 'red' }}>{error}</p>}
+
           <div className="social-login">
-         
-           <img
-             src="faceboo.png"
-               alt="Iniciar sesión con Facebook"
-                onClick={() => handleSocialLogin('Facebook')}
-                   className="social-icon"
-             />
-
-        
-              <img
-                 src="/google.png"
-                   alt="Iniciar sesión con Google"
-                     onClick={() => handleSocialLogin('Google')}
-                  className="social-icon"
-  />
-
-         
-                 <img
-                    src="windows.png"
-                       alt="Iniciar sesión con Microsoft"
-                           onClick={() => handleSocialLogin('Microsoft')}
-                             className="social-icon"
-                              />
-                   </div>
-
+            <img
+              src="faceboo.png"
+              alt="Iniciar sesión con Facebook"
+              onClick={() => handleSocialLogin('Facebook')}
+              className="social-icon"
+            />
+            <img
+              src="/google.png"
+              alt="Iniciar sesión con Google"
+              onClick={() => handleSocialLogin('Google')}
+              className="social-icon"
+            />
+            <img
+              src="windows.png"
+              alt="Iniciar sesión con Microsoft"
+              onClick={() => handleSocialLogin('Microsoft')}
+              className="social-icon"
+            />
+          </div>
 
           <p className="register-link">
             ¿No tienes cuenta? <Link to="/register">Regístrate aquí</Link>
