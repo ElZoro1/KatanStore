@@ -61,7 +61,6 @@ function Register() {
 
           {error && <p style={{ color: 'red' }}>{error}</p>}
 
-          {/* Sección de íconos de redes sociales */}
           <div className="social-login">
             <img 
               src="/faceboo.png" 

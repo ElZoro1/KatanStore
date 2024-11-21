@@ -39,67 +39,50 @@
 .footerSection p {
   color: #aaa;
 }
-/* General adjustments for mobile screens */
 @media screen and (max-width: 768px) {
-  /* Ajustar contenedor general */
   .header {
     flex-direction: column;
     align-items: center;
   }
-
   .logo-section {
     margin-bottom: 10px;
   }
-
   .nav {
     flex-direction: column;
     gap: 15px;
   }
-
   .nav a {
-    font-size: 1em; /* Reducir el tamaño del texto */
+    font-size: 1em; 
   }
-
-  /* Ajustar los contenedores de los banners */
   .banner {
     display: flex;
-    flex-direction: column; /* Colocar los elementos en una columna */
+    flex-direction: column; 
     align-items: center;
     text-align: center;
   }
-
   .banner img {
-    width: 90%; /* Ajustar el tamaño de la imagen al ancho de la pantalla */
+    width: 90%; 
   }
-
   .banner h1, .banner h2 {
-    font-size: 1.2em; /* Reducir el tamaño del texto */
+    font-size: 1.2em; 
   }
-
   .banner button {
-    width: 80%; /* Hacer que los botones ocupen más espacio horizontal */
+    width: 80%; 
     margin-top: 10px;
   }
-
-  /* Ajustar la sección de productos destacados */
   .featured-products {
     padding: 10px;
   }
-
   .product-card {
-    width: 100%; /* Hacer que cada tarjeta de producto ocupe todo el ancho */
+    width: 100%; 
     margin-bottom: 15px;
   }
-
   .product-card img {
-    width: 100%; /* Ajustar la imagen al ancho del contenedor */
+    width: 100%; 
   }
-
-  /* Ajustar el texto en los productos */
   .product-card h3 {
-    font-size: 1em; /* Reducir el tamaño del título */
+    font-size: 1em; 
   }
-
   .product-card p {
     font-size: 0.9em;
   }
