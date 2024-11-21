@@ -173,3 +173,45 @@
 .transfer-button:hover {
   background-color: #1ebc57;
 }
+.delivery-options {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: left; 
+}
+
+.delivery-options h3 {
+  font-size: 1.1em;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.delivery-options label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 1em;
+  color: #555;
+  cursor: pointer;
+  background-color: #f8f8f8;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.delivery-options label:hover {
+  background-color: #eaeaea;
+}
+
+.delivery-options input[type="radio"] {
+  margin-right: 10px;
+  accent-color: #6200ea; 
+}
+
+.delivery-options label.active {
+  background-color: #6200ea;
+  color: #fff;
+  border-color: #6200ea;
+}
+

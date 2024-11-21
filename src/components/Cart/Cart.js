@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useCart } from '../CartContext';
 import { useOrder } from '../../OrderContext';
 import './Cart.css';
@@ -7,7 +7,15 @@ const Cart = () => {
   const { cartItems, removeFromCart, calculateTotal, clearCart } = useCart();
   const { addOrder } = useOrder();
 
+  const [deliveryOption, setDeliveryOption] = useState('');
+  const [error, setError] = useState('');
+
   const handleCheckout = () => {
+    if (!deliveryOption) {
+      setError('Por favor, selecciona una opción de entrega.');
+      return;
+    }
+
     if (cartItems.length === 0) return;
 
     const newOrder = {
@@ -15,6 +23,7 @@ const Cart = () => {
       items: cartItems,
       status: 'En curso',
       total: calculateTotal(),
+      deliveryOption,
     };
 
     addOrder(newOrder);
@@ -23,8 +32,13 @@ const Cart = () => {
   };
 
   const handleTransferPayment = () => {
-    const message = `Hola, buenas. Quiero pagar con transferencia. Mi total es: $${calculateTotal().toLocaleString()}`;
-    const whatsappURL = `https://wa.me/56950195789?text=${encodeURIComponent(message)}`; 
+    if (!deliveryOption) {
+      setError('Por favor, selecciona una opción de entrega.');
+      return;
+    }
+
+    const message = `Hola, buenas. Quiero pagar con transferencia. Mi total es: $${calculateTotal().toLocaleString()}. Opción de entrega seleccionada: ${deliveryOption}`;
+    const whatsappURL = `https://wa.me/56950195789?text=${encodeURIComponent(message)}`;
     window.open(whatsappURL, '_blank');
   };
 
@@ -56,6 +70,40 @@ const Cart = () => {
       <div className="cart-summary">
         <input type="text" placeholder="Cupón de descuento" className="coupon-input" />
         <button className="apply-coupon-button">Aplicar</button>
+
+        <div className="delivery-options">
+          <h3>Opciones de entrega:</h3>
+          <label
+            className={deliveryOption === 'Despacho a domicilio' ? 'active' : ''}
+          >
+            <input
+              type="radio"
+              value="Despacho a domicilio"
+              checked={deliveryOption === 'Despacho a domicilio'}
+              onChange={(e) => {
+                setDeliveryOption(e.target.value);
+                setError('');
+              }}
+            />
+            Despacho a domicilio
+          </label>
+          <label
+            className={deliveryOption === 'Entregar en tienda' ? 'active' : ''}
+          >
+            <input
+              type="radio"
+              value="Entregar en tienda"
+              checked={deliveryOption === 'Entregar en tienda'}
+              onChange={(e) => {
+                setDeliveryOption(e.target.value);
+                setError('');
+              }}
+            />
+            Entregar en tienda
+          </label>
+        </div>
+
+        {error && <p style={{ color: 'red', fontWeight: 'bold' }}>{error}</p>}
 
         <div className="summary-total">
           <p>Total: ${calculateTotal().toLocaleString()}</p>
